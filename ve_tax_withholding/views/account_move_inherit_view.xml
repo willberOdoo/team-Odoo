@@ -8,8 +8,14 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='payment_reference']" position="after"> <field name="control_number" /> </xpath>
                 <xpath expr="//div[@class='oe_button_box']" position="inside">
-                    <button string="Retenciones" name="ve_tax_withholding.tax_withholding_voucher_vendor_form_action" type="action" class="oe_stat_button" icon="fa-dollar">
-                    </button>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="open_model_test" type="object" class="oe_stat_button" icon="fa-meh-o">
+                            <div class="o_stat_info">
+                                <field name="withholdings_counter" class="o_stat_value"/>
+                                <span class="o_stat_text"> Retenciones </span>
+                            </div>
+                        </button>
+                    </div>
                 </xpath>
             </field>
         </record>
