@@ -15,4 +15,4 @@ class AccountMove( models.Model):
 
 
     def open_model_test(self):
-        print('Prueba')
+        print("Prueba")
