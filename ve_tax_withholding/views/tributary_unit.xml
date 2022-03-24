@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data> 
+        <record model="ir.ui.view" id="tributary_unit_form">
+            <field name="name">tributary.unit.form</field>
+            <field name="model">tax.tributary_unit</field>
+            <field name="arch" type="xml">
+                <form string="Tributary Unit Form">
+                    <sheet>
+                        <h1> <field name="unit"/></h1>
+                        <group>
+                            <group> 
+                                <field name="factor"/>
+                                <field name="minimum"/>
+                                <field name="gaceta"/> 
+                                <field name="gaceta_fecha"/> 
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="tributary_unit_list">
+            <field name="name">tributary.unit.list</field>
+            <field name="model">tax.tributary_unit</field>
+            <field name="arch" type="xml">  
+                
+                <tree string="Tributary Unit List"> 
+                    <field name="gaceta"/> 
+                    <field name="gaceta_fecha"/> 
+                    <field name="unit"/> 
+                </tree> 
+            </field>
+        </record>
+             
+        <record model="ir.ui.view" id="tributary_unit_search">
+            <field name="name">tributary.unit.search</field>
+            <field name="model">tax.tributary_unit</field>
+            <field name="arch" type="xml"> <search> <field name="unit"/> <field name="factor"/>
+           <field name="minimum"/> </search> </field>
+        </record>
+                
+      
+        <record id="seq_tributary_unit" model="ir.sequence">
+            <field name="name">Unidad Tibutaria N°</field>
+            <field name="code">tributary_unit</field>
+            <field name="prefix">UT</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+         
+    </data>
+</odoo>

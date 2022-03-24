@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.actions.act_window" id="salesperson_list_action">
+            <field name="name">Salesperson</field>
+            <field name="res_model">custom_salesperson.salesperson</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new Salesperson
+                </p>
+            </field>
+        </record>
+        
+        <menuitem id="menu_custom_salesperson" name="Vendedor" parent="sale.menu_sale_general_settings" sequence="2" action="salesperson_list_action"/> 
+        <menuitem id="menu_custom_salesperson_sub_vendedor" name="Vendedor" parent="account.account_invoicing_menu" sequence="3" action="salesperson_list_action"/>
+
+        <menuitem id="menu_custom_salesperson_sub" name="Custom Salespeople" parent="account.menu_finance_payables" sequence="30"  action="salesperson_list_action"/>
+        
+        <menuitem id="menu_custom_salesperson_sub_dos" name="Custom Salespeople" parent="account.menu_finance_configuration" sequence="30"  action="salesperson_list_action"/>
+
+    </data>
+</odoo>

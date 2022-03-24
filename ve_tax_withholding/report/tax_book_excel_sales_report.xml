@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <report id="action_report_excel_sales_book" model="tax.sales_book_wizard" string="Libro de Ventas Reporte" report_type="xlsx" name="ve_tax_withholding.report_book_excel_sales" file="libro_ventas" attachment_use="False"/>
+</odoo>
