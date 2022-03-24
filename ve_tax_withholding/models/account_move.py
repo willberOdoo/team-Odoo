@@ -12,6 +12,7 @@ class AccountMove( models.Model):
             count = self.env['tax.withholding_voucher_vendor'].search_count([('related_invoice', '=', record.id)])
             record.withholdings_counter = count
             
-    @api.model
+
+
     def open_model_test(self):
         print('Prueba')
