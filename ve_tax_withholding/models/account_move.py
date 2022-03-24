@@ -20,6 +20,6 @@ class AccountMove( models.Model):
             'name': 'Retenciones',
             'res_model': 'tax.withholding_voucher_vendor',
             'domain': [('related_invoice', '=', self.id)],
-            'view_mode': 'form,tree',
+            'view_mode': 'tree,form',
             'target': 'current'    
         }
