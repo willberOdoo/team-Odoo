@@ -15,4 +15,11 @@ class AccountMove( models.Model):
 
 
     def open_model_test(self):
-        print("dnfvjhv   nsfd nm fdnb nme njndfsm dnf nmf  nmdf nm nm  nmds nm fdn dfnm nmjd ndvn nd nmdnj sk mxcnjdfm ndf  nmd nc mdfnm fds d, kndf  kmnmn nmdf njd  ")
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Retenciones',
+            'res_model': 'tax.withholding_voucher_vendor',
+            'domain': [('related_invoice', '=', self.id)],
+            'view_mode': 'tree,form',
+            'target': 'current'    
+        }
