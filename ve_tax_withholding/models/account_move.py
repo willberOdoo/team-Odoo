@@ -4,7 +4,7 @@ class AccountMove( models.Model):
     _inherit = 'account.move'
     control_number = fields.Char(string='Numero de control', required=True, default='00')
     
-    withholdings_counter = fields.Integer(string='counter' compute='_compute_withholding_counter') 
+    withholdings_counter = fields.Integer(string='counter', compute='_compute_withholding_counter') 
     
     @api.model
     def _compute_withholding_counter(self):
