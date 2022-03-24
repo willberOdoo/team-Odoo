@@ -15,4 +15,4 @@ class AccountMove( models.Model):
 
 
     def open_model_test(self):
-        print("Prueba")
+        print("dnfvjhv   nsfd nm fdnb nme njndfsm dnf nmf  nmdf nm nm  nmds nm fdn dfnm nmjd ndvn nd nmdnj sk mxcnjdfm ndf  nmd nc mdfnm fds d, kndf  kmnmn nmdf njd  ")
