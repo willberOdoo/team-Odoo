@@ -12,8 +12,8 @@
                             <group> 
                                 <field name="factor"/>
                                 <field name="minimum"/>
-                                <field name="gaceta"/> 
-                                <field name="gaceta_fecha"/> 
+                               <!-- <field name="gaceta"/>
+                                <field name="gaceta_fecha"/> -->
                             </group>
                         </group>
                     </sheet>
