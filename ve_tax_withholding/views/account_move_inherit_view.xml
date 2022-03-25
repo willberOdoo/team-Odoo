@@ -6,9 +6,16 @@
             <field name="model">account.move</field>
             <field name="inherit_id" ref="account.view_move_form" />
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='payment_reference']" position="after"> <field name="control_number" /> </xpath>
+                <xpath expr="//field[@name='payment_reference']"
+                       position="after">
+                    <field name="control_number" />
+                </xpath>
                 <xpath expr="//div[@class='oe_button_box']" position="inside">
-                    <button string="Retenciones" name="ve_tax_withholding.tax_withholding_voucher_vendor_form_action" type="action" class="oe_stat_button" icon="fa-dollar">
+                    <button string="Retenciones"
+                            name="ve_tax_withholding.tax_withholding_voucher_vendor_form_action"
+                            type="action"
+                            class="oe_stat_button"
+                            icon="fa-dollar">
                     </button>
                 </xpath>
             </field>
