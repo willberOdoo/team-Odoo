@@ -6,7 +6,7 @@ class WithholdingSubject( models.Model):
     _description = 'Subject of Withholding Voucher'
 
     name = fields.Char( string = 'Concepto de la Retención', required = True)
-    code = fields.Char( string = 'Código', required = True)
+    code = fields.Char( string = 'Código', required = True) 
     notes = fields.Text( string = 'Notas internas')
     active = fields.Boolean( string = 'Active', default = True)
     partner_type_custom = fields.Selection([('PNR',' PNR: Persona Natural Residente '),

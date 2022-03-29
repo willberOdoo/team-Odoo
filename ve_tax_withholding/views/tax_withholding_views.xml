@@ -61,12 +61,7 @@
         <record model="ir.ui.view" id="tax_withholding_customer_list">
             <field name="name">tax.withholding.customer.list</field>
             <field name="model">tax.withholding_voucher_customer</field>
-            <field name="arch" type="xml">
-            <tree string="Tax Withholding Voucher List">
-            <field name="code"/>
-            <field name="related_invoice"/>
-            <field name="tax_amount"/>
-            <field name="create_date"/></tree></field>
+            <field name="arch" type="xml"> <tree string="Tax Withholding Voucher List"> <field name="code"/> <field name="related_invoice"/> <field name="tax_amount"/> <field name="create_date"/> </tree> </field>
         </record>
         <record model="ir.ui.view" id="tax_withholding_search">
             <field name="name">tax.withholding.search</field>

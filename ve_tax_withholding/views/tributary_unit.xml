@@ -10,10 +10,9 @@
                         <h1> <field name="unit"/></h1>
                         <group>
                             <group> 
-                                <field name="factor"/>
                                 <field name="minimum"/>
-                               <!-- <field name="gaceta"/>
-                                <field name="gaceta_fecha"/> -->
+                                <field name="gaceta"/> 
+                                <field name="gaceta_fecha"/> 
                             </group>
                         </group>
                     </sheet>
@@ -37,7 +36,7 @@
         <record model="ir.ui.view" id="tributary_unit_search">
             <field name="name">tributary.unit.search</field>
             <field name="model">tax.tributary_unit</field>
-            <field name="arch" type="xml"> <search> <field name="unit"/> <field name="factor"/>
+            <field name="arch" type="xml"> <search> <field name="unit"/>
            <field name="minimum"/> </search> </field>
         </record>
                 

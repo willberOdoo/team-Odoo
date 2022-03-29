@@ -9,7 +9,7 @@ class TaxWithholdingVoucherVendor( models.Model):
     subject = fields.Many2one( string = 'Concepto de la Retencion', comodel_name = 'tax.withholding_subject', required = True)
     notes = fields.Text( string = 'Internal Notes about Voucher')
     active = fields.Boolean( string = 'Activo', default = True)
-    related_invoice = fields.Many2one( string = 'Referencia de la Factura', comodel_name = 'account.move', required = True)
+    related_invoice = fields.Many2one( string = 'Referencia de la Factura', comodel_name = 'account.move', required = True, store=True)
     amount_by_group = fields.Binary(string='Porcentaje de impuesto',related='related_invoice.amount_by_group')
     tax_amount = fields.Float(string='Porcentaje de impuesto retenido', store=True )
     untaxed_amount = fields.Float(string='Base Imponible', store=True)

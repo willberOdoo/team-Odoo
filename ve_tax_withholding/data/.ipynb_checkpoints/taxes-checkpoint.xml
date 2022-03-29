@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data noupdate="1">
-    <!-- Account Taxes -->
-        <record id="tax0sale" model="account.tax.template">
+    <!-- Exentos -->
+        <record id="exen_sale" model="account.tax.template">
             <field name="chart_template_id" ref="ve_chart_template_amd"/>
             <field name="name">Exento (ventas)</field>
             <field name="description">Exento (ventas)</field>
             <field name="amount">0</field>
             <field name="amount_type">percent</field>
             <field name="type_tax_use">sale</field>
-            <field name="tax_group_id" ref="tax_group_iva_0"/>
+            <field name="tax_group_id" ref="tax_group_ex"/>
             <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
                 (0,0, {
                     'factor_percent': 100,
@@ -31,5 +31,224 @@
                 }),
             ]"/>
         </record>
+        <record id="exen_purchase" model="account.tax.template">
+            <field name="chart_template_id" ref="ve_chart_template_amd"/>
+            <field name="name">Exento (Compras)</field>
+            <field name="description">Exento (Compras)</field>
+            <field name="amount">0</field>
+            <field name="amount_type">percent</field>
+            <field name="type_tax_use">purchase</field>
+            <field name="tax_group_id" ref="tax_group_ex"/>
+            <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                }),
+            ]"/>
+            <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                }),
+            ]"/>
+        </record>
+        
+        
+        
+        <!-- IVA para compras y ventas -->
+            <record id="iva_sale" model="account.tax.template">
+            <field name="chart_template_id" ref="ve_chart_template_amd"/>
+            <field name="name">IVA 16% (Ventas)</field>
+            <field name="description">IVA 16% (Ventas)</field>
+            <field name="amount">16</field>
+            <field name="amount_type">percent</field>
+            <field name="type_tax_use">sale</field>
+            <field name="tax_group_id" ref="tax_group_iva"/>
+            <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                }),
+            ]"/>
+            <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                }),
+            ]"/>
+        </record>
+        <record id="iva_purchases" model="account.tax.template">
+            <field name="chart_template_id" ref="ve_chart_template_amd"/>
+            <field name="name">IVA 16% (Compras)</field>
+            <field name="description">IVA 16% (Compras)</field>
+            <field name="amount">16</field>
+            <field name="amount_type">percent</field>
+            <field name="type_tax_use">purchase</field>
+            <field name="tax_group_id" ref="tax_group_iva"/>
+            <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                }),
+            ]"/>
+            <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                }),
+            ]"/>
+        </record>
+        
+        
+        
+            <!-- Retencion de IVA 75% -->
+           <record id="retencion_sale" model="account.tax.template">
+            <field name="chart_template_id" ref="ve_chart_template_amd"/>
+            <field name="name">Retención IVA 75%(Compras)</field>
+            <field name="description">Retención IVA 75% (Compras)</field>
+            <field name="amount">75</field>
+            <field name="amount_type">percent</field>
+            <field name="type_tax_use">purchase</field>
+            <field name="tax_group_id" ref="tax_group_ret_iva"/>
+            <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                }),
+            ]"/>
+            <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                }),
+            ]"/>
+        </record>
+        
+           <!-- Retencion de IVA 75% -->
+           <record id="retencion_purchases" model="account.tax.template">
+            <field name="chart_template_id" ref="ve_chart_template_amd"/>
+            <field name="name">Retención IVA 75%(Ventas)</field>
+            <field name="description">Retención IVA 75% (Ventas)</field>
+            <field name="amount">75</field>
+            <field name="amount_type">percent</field>
+            <field name="type_tax_use">sale</field>
+            <field name="tax_group_id" ref="tax_group_ret_iva"/>
+            <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                }),
+            ]"/>
+            <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                }),
+            ]"/>
+        </record>
+        
+        
+        
+        <!-- Retencion de IVA 100% -->
+           <record id="retencion_sale_100" model="account.tax.template">
+            <field name="chart_template_id" ref="ve_chart_template_amd"/>
+            <field name="name">Retención IVA 100%(Compras)</field>
+            <field name="description">Retención IVA 100% (Compras)</field>
+            <field name="amount">100</field>
+            <field name="amount_type">percent</field>
+            <field name="type_tax_use">purchase</field>
+            <field name="tax_group_id" ref="tax_group_ret_iva"/>
+            <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                }),
+            ]"/>
+            <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                }),
+            ]"/>
+        </record>
+        
+           <!-- Retencion de IVA 100% -->
+           <record id="retencion_purchases_100" model="account.tax.template">
+            <field name="chart_template_id" ref="ve_chart_template_amd"/>
+            <field name="name">Retención IVA 100%(Ventas)</field>
+            <field name="description">Retención IVA 100%(Ventas)</field>
+            <field name="amount">100</field>
+            <field name="amount_type">percent</field>
+            <field name="type_tax_use">sale</field>
+            <field name="tax_group_id" ref="tax_group_ret_iva"/>
+            <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                }),
+            ]"/>
+            <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                }),
+            ]"/>
+        </record>  
     </data>
 </odoo>

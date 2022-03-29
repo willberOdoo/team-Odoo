@@ -2,7 +2,7 @@
 <odoo>
   <data>
     <record id="ve_chart_template_amd" model="account.chart.template">
-        <field name="name">Paquete de Localización Fiscal Venezuela</field>
+        <field name="name">Localización Fiscal Venezuela</field>
         <field name="bank_account_code_prefix">1113</field>
         <field name="cash_account_code_prefix">1111</field>
         <field name="transfer_account_code_prefix">1129003</field>
