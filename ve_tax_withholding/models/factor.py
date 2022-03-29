@@ -6,5 +6,6 @@ class factor(models.TransientModel):
     _name = 'res.config.settings'
     _inherit = 'res.config.settings'
     
-    factor = fields.Float(
-    string = 'Factor Fiscal', store=True  )
+    factor = fields.Float(string = 'Factor Fiscal', store=True  ) 
+    #factor = fields.Float(related='company_id.factor', string = 'Factor Fiscal')
+    
